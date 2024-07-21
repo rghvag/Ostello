@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class CoachingCenterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       children: [
         Padding(
@@ -19,9 +21,8 @@ class CoachingCenterCard extends StatelessWidget {
               child: Center(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //image
                     Stack(
                       children: [
                         ClipRRect(
@@ -30,22 +31,22 @@ class CoachingCenterCard extends StatelessWidget {
                           child: Image.asset(
                             'assets/images/coach_center.jpg',
                             fit: BoxFit.cover,
-                            height: 146,
-                            width: 132,
+                            height: screenWidth * 0.4, // Adjusted height
+                            width: screenWidth * 0.35, // Adjusted width
                           ),
                         ),
                         Positioned(
                           bottom: 0,
                           left: 0,
-                          // right: 0,
                           child: Container(
+                            color: Colors.transparent,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 4),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Column(
-                                  // mainAxisAlignment: MainAxisAlignment.spaceBetween/,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       '50% off',
@@ -65,7 +66,6 @@ class CoachingCenterCard extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                //fav icon on image
                                 IconButton(
                                   onPressed: () {},
                                   icon: const Icon(
@@ -79,8 +79,6 @@ class CoachingCenterCard extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    //details
                     Expanded(
                       child: ListTile(
                         contentPadding: const EdgeInsets.only(left: 10, top: 0),
@@ -127,10 +125,9 @@ class CoachingCenterCard extends StatelessWidget {
                               child: const Text(
                                 'View Details',
                                 style: TextStyle(
-                                  color: Colors.purple,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                ),
+                                    color: Colors.purple,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12),
                               ),
                             ),
                           ],
