@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                   Transform.rotate(
                     angle: 90 * pi / 180,
                     child: Padding(
-                      padding:  const EdgeInsets.only(bottom: 8.0),
+                      padding: const EdgeInsets.only(bottom: 8.0),
                       child: Center(
                         child: Container(
                           // color: Colors.blue,
@@ -89,7 +89,14 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
-              Tab(text: 'MarketPlace'),
+              Tab(
+                child: Text(
+                  'MarketPlace',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
               Tab(
                 child: Text(
                   'News',
