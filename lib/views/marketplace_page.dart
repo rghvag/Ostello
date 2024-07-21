@@ -6,7 +6,7 @@ class MarketplacePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemCount: 4,
+        itemCount: 6,
         itemBuilder: (context, index) {
           return Center(child: CoachingCenterCard());
         },
